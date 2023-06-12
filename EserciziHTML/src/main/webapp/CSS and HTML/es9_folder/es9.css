@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+
+.center{
+	text-align : center;
+	font-weight: bold;
+}
+
+.container{
+	text-align: center;
+	padding-left : 220px;
+}
+
+.myOL{
+	display: inline-block;
+  	text-align: left;
+}

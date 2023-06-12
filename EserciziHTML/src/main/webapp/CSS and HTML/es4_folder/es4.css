@@ -1,0 +1,8 @@
+@charset "ISO-8859-1";
+
+.a{
+	width : 512px;
+	height : 341px;
+	box-shadow: 10px 10px 10px red;
+	transform: rotate(30deg);
+}

@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+
+#id{
+	background-color: #4CAF50; /* Green */
+	border: 2px solid #008CBA;
+	color: white;
+	text-align: center;
+	font-size: 16px;
+	font-family: "Times New Roman", Times, serif;
+}
