@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>PAGINA 2</h1>
+
+	<script>
+	
+		//Prendo i parametri dall'url
+		const urlParams = new URLSearchParams(window.location.search);
+		//Prendo il parametro con nome url
+		const url = urlParams.get('url');
+		//Scrivo nella pagina web
+		document.write("l'url passato è: " + url);
+	
+	</script>
+</body>
+</html>

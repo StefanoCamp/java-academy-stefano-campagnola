@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Esercizio JavaScript</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	  
+	<div class="container">
+		<br>
+	    <div class="row">
+		    <div class="col col-sm-6 text-center">
+		    	<h4>1. calcola la somma di due numeri e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 1, soluzione: 4 + 5 = ', somma(4,5));print('2. Esercizio 1, soluzione: 8 + 3 = ', somma(8,3))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>2. calcola la differenza tra due numeri e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 2, soluzione: 4 - 5 = ', sottrazione(4,5));print('2. Esercizio 2, soluzione: 8 - 3 = ', sottrazione(8,3))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+	    
+	    	<div class="col-sm-6 text-center">
+		    	<h4>3. moltiplica due numeri e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 3, soluzione: 4 * 5 = ', moltiplicazione(4,5));print('2. Esercizio 3, soluzione: 8 * 3 = ', moltiplicazione(8,3))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+	    
+	    	<div class="col-sm-6 text-center">
+		    	<h4>4. divide due numeri e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 4, soluzione: 8 / 2 = ', divisione(8,2));print('2. Esercizio 2, soluzione: 12 / 5 = ', divisione(12,5))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>5. calcola il resto della divisione tra due numeri e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 5, soluzione: il resto della divisione tra 8 e 2 è ', resto(8,2));print('2. Esercizio 5, soluzione: il resto della divisione tra 12 e 5 è ', resto(12,5))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>6. calcola la media aritmetica di un insieme di numeri e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 6, soluzione: la media aritmetica tra 1,5,8,12 e 25 è ', media([1,5,8,12,25]));print('2. Esercizio 6, soluzione: la media aritmetica tra 5,9,16,11 e 18 è ', media([5,9,16,11,18]))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>7. verifica se un numero è pari o dispari e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 7, soluzione: il numero 5 è pari - ', isEven(5));print('2. Esercizio 7, soluzione: il numero 8 è pari - ', isEven(8))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>8. verifica se un numero è maggiore, minore o uguale ad un altro numero e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 8, soluzione: il numero 5 è maggiore del numero 8 - ', greaterThan(5,8));print('2. Esercizio 8, soluzione: il numero 15 è maggiore del numero 8 - ', greaterThan(15,8))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>9. verifica se una stringa è vuota o meno e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 9, soluzione: la stringa ciao è vuota - ', stringIsEmpty('ciao')); print('2. Esercizio 9, soluzione: la stringa vuota è vuota - ', stringIsEmpty(''))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>10. verifica se una stringa contiene una determinata sottostringa e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 10, soluzione: la sottostringa prova è presente nella stringa prova di nuovo - ', hasSubString('prova di nuovo','prova'));print('2. Esercizio 10, soluzione: la sottostringa prova è presente nella stringa rpv di nuovo - ', hasSubString('rpv di nuovo','prova'))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>11. verifica se una lettera è una vocale o una consonante e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 11, soluzione: la lettera a è una vocale - ', isVowel('a'));print('2. Esercizio 11, soluzione: la lettera b è una vocale - ', isVowel('b'))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>12. verifica se un numero è divisibile per 3, 5 o entrambi e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="console.log('1. ');divisibile35(15);console.log('2. ');divisibile35(13);">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>13. crea un array di numeri interi e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 13, soluzione: l\'array è - ', array());print('2. Esercizio 13, soluzione: l\'array è - ', array())">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>14. cerca un elemento in un array e stampa se è stato trovato o meno.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 14, soluzione: il 5 è presente nell\'array [1,4,5,8] - ', isPresent([1,4,5,8],5));print('2. Esercizio 14, soluzione: il 5 è presente nell\'array [1,4,7,8] - ', isPresent([1,4,7,8],5))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>15. unisce due array in un unico array e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 15, soluzione: l\'unione tra l\'array [1,4,5,8] e l\'array [2,5,6,9] è - ', appendArrays([1,4,5,8],[2,5,6,9]));print('2. Esercizio 15, soluzione: l\'unione tra l\'array [8,9,2,1] e l\'array [0,50,16,92] è - ', appendArrays([8,9,2,1],[0,50,16,92]))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>16. estrae un sotto-array da un array (ad esempio solo i numeri pari) e stampa il risultato a console</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 16, soluzione: l\'array con solo numeri pari ottenuto dall\'array [1,2,3,4,5,6,7,8,9] è  - ', getEvenNumbers([1,2,3,4,5,6,7,8,9]));print('2. Esercizio 16, soluzione: l\'array con solo numeri pari ottenuto dall\'array [11,22,32,42,4,63,75,8,90] è  - ', getEvenNumbers([11,22,32,42,4,63,75,8,90]))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>17. utilizza la funzione .filter() per prendere solo gli elementi maggiori di 5 in array di 10 numeri.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 17, soluzione: l\'array con solo numeri maggiori di 5 ottenuto dall\'array [10,2,30,4,50,6,72,81,9,5] è  - ', filterNumbers([10,2,30,4,50,6,72,81,9,5]));print('2. Esercizio 17, soluzione: l\'array con solo numeri maggiori di 5 ottenuto dall\'array [11,211,3,45,505,56,772,681,9,3] è  - ', filterNumbers([11,211,3,45,505,56,772,681,9,3]))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>18. crea un oggetto con alcune proprietà e stampa il risultato a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="const obj=getObject();console.log('1. Esercizio 18, soluzione: l\'oggetto è  - ');console.log(obj);const obj2=getObject();console.log('2. Esercizio 18, soluzione: l\'oggetto è  - ');console.log(obj2)">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>19. accede a una proprietà di un oggetto e stampa il valore a console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 19, soluzione: il valore della proprietà prova dell\'oggetto è  - ', getProperty(getObject(),'prova'));print('2. Esercizio 19, soluzione: il valore della proprietà prova2 dell\'oggetto è  - ', getProperty(getObject(),'prova2'))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>20. modifica il valore di una proprietà di un oggetto e stampa il risultato a console</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="const obj3=getObject();print('il valore della proprietà prova dell\'oggetto, prima della modifica è  - ', getProperty(obj3,'prova'));modifyProperty(obj3,'prova');print('1. Esercizio 20, soluzione: il valore della proprietà prova dell\'oggetto dopo la modifica è  - ', getProperty(obj3,'prova'));const obj4=getObject();print('il valore della proprietà prova2 dell\'oggetto, prima della modifica è  - ', getProperty(obj4,'prova2'));modifyProperty(obj4,'prova2');print('2. Esercizio 20, soluzione: il valore della proprietà prova2 dell\'oggetto dopo la modifica è  - ', getProperty(obj4,'prova2'))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>21. invoca una sottofunzione che accetta due numeri e restituisce la loro somma. Stampa il risultato del return nella console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 21, soluzione: 4 + 5 = ', somma(4,5));print('2. Esercizio 21, soluzione: 8 + 3 = ', somma(8,3))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>22. invoca una sottofunzione che accetta un numero e restituisce il suo valore raddoppiato. Stampa il risultato del return nella console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 22, soluzione: il doppio di 5 è ', double(5));print('2. Esercizio 22, soluzione: il doppio di 7 è ', double(7))">Esegui funzione</button>
+		    </div>
+	    
+	    </div><br>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>23. invoca una sottofunzione che accetta una stringa e restituisce la sua lunghezza. Stampa il risultato del return nella console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 23, soluzione: la lunghezza della stringa prova è ', length('prova'));print('2. Esercizio 23, soluzione: la lunghezza della stringa provadinuovo è ', length('provadinuovo'))">Esegui funzione</button>
+		    </div>
+	    
+	    </div>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>24. invoca una sotto funzione che accetta una stringa e un carattere e restituisce la posizione del carattere all'interno della stringa. Stampa il risultato del return nella console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 24, soluzione: la posizione del carattere a nella stringa prova è ', verifyPresenceOfCharacter('prova','a'));print('2. Esercizio 24, soluzione: la posizione del carattere o nella stringa prova è ', verifyPresenceOfCharacter('prova','o'))">Esegui funzione</button>
+		    </div>
+	    
+	    </div>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>25. invoca una sotto funzione accetta due numeri e restituisce il loro valore massimo. Stampa il risultato del return nella console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 25, soluzione: il valore massimo tra 5 e 14 è ', getMax(5,14));print('2. Esercizio 25, soluzione: soluzione: il valore massimo tra 523 e 14 è ', getMax(523,14))">Esegui funzione</button>
+		    </div>
+	    
+	    </div>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>26. invoca una sotto funzione accetta una stringa e restituisce la stringa al contrario. Stampa il risultato del return nella console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 26, soluzione: la stringa prova al contrario è ', reverseString('prova'));print('2. Esercizio 26, soluzione: la stringa provadinuovo al contrario è ', reverseString('provadinuovo'))">Esegui funzione</button>
+		    </div>
+	    
+	    </div>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>27. invoca una sotto funzione che accetta un array e restituisce la somma dei suoi elementi. Stampa il risultato del return nella console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 27, soluzione: la somma degli elementi dell\'array [1,3,4,5] è ', sumArray([1,3,4,5]));print('2. Esercizio 27, soluzione: la somma degli elementi dell\'array [10,43,4,52] è ', sumArray([10,43,4,52]))">Esegui funzione</button>
+		    </div>
+	    
+	    </div>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>28. invoca una sotto funzione che accetta un array e restituisce il valore massimo dell'array. Stampa il risultato del return nella console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 28, soluzione: il valore massimo dell\'array [1,3,4,5] è ', maxArray([1,3,4,5]));print('2. Esercizio 28, soluzione: il valore massimo dell\'array [10,43,4,52] è ', maxArray([10,43,4,52]))">Esegui funzione</button>
+		    </div>
+	    
+	    </div>
+	    <div class="row">
+		    <div class="col-sm-6 text-center">
+		    	<h4>29. invoca una sotto funzione che accetta due stringhe e restituisce la stringa più lunga. Stampa il risultato del return nella console.</h4>
+		    </div>
+		    <div class="col-sm-6 text-center">
+		    	<button type="button" class="btn btn-primary" onclick="print('1. Esercizio 29, soluzione: la stringa più lunga tra prova e prova2 è ', longerString('prova','prova2'));print('2. Esercizio 29, soluzione: la stringa più lunga tra provadinuovo2 e provadinuovo è ', longerString('provadinuovo2','provadinuovo'))">Esegui funzione</button>
+		    </div>
+	    
+	    </div>
+	</div>
+<script src="script.js"></script>
+</body>
+</html>
