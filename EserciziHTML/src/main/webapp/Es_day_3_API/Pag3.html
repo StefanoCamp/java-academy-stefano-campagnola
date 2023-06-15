@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p id="name"></p>
+<p id="surname"></p>
+<p id="email"></p>
+
+<script src="scripts.js"></script>
+<script>
+	const params = new URLSearchParams(window.location.search);
+	document.getElementById("name").innerHTML=params.get("name");
+	document.getElementById("surname").innerHTML=params.get("surname");
+	document.getElementById("email").innerHTML=params.get("email");
+</script>
+</body>
+</html>

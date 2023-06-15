@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script src="scripts.js"></script>
+	<script>
+	
+		var request = new XMLHttpRequest();
+		request.open('GET', 'http://cicacademy2023.ddns.net/esercizi/get',false);		
+		request.send();
+		var object = JSON.parse(request.response);
+	
+</script>
+	
+</head>
+<body>
+
+	<p id="primop"></p>
+	<p id="secondop"></p>
+	
+	<script>
+	
+		updateParagraphs(object);
+	
+	</script>
+
+
+</body>
+</html>

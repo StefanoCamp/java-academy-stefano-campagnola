@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<p id="primop"></p>
+	<p id="secondop"></p>
+	
+	<script src="scripts.js"></script>
+		<script>
+			
+			 try{
+					const request = new XMLHttpRequest();
+					const userParams = 'username=prova';
+					request.open('GET', 'http://cicacademy2023.ddns.net/esercizi/getParam?' + userParams,false);		
+					request.send();
+					if(request.status === 200){
+						const object = JSON.parse(request.response);
+						updateParagraphs(object); 
+					}else{
+						throw new Error('Response status != 200: ' + response.status);
+					}
+					
+			 }catch(error){
+				 alert('Username errato');
+			 }
+		
+	</script>
+
+
+</body>
+</html>
