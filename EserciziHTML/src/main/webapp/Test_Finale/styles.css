@@ -1,0 +1,18 @@
+@charset "ISO-8859-1";
+
+.title{
+	font-weight: bold;
+	font-style: italic;
+}
+
+.center_div{
+	margin-top: 200px;
+    width: 25%
+}
+
+.div_profile{
+	
+	margin-top: 150px;
+    width: 80%
+	
+}
