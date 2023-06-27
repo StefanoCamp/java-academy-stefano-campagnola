@@ -19,7 +19,7 @@
       <property name = "endDate" column = "end_date" type = "date"/>
       
       <set name = "modules" cascade="all" lazy="true" >
-         <key column = "course_id"/>
+         <key column = "course_id" not-null="true"/>
          <one-to-many class="com.academy.cic.model.Module" />
       </set>
          

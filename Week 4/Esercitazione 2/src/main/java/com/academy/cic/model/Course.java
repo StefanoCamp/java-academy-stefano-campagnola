@@ -10,7 +10,7 @@ public class Course {
 	private Date startDate, endDate;
 	private Set<Module> modules;
 	
-	/*public Course() {
+	public Course() {
 		
 	}
 	
@@ -18,7 +18,7 @@ public class Course {
 		setName(name);
 		setStartDate(startDate);
 		setEndDate(endDate);
-	}*/
+	}
 	
 	public int getId() {
 		return id;
@@ -54,11 +54,13 @@ public class Course {
 	public void setModules(Set<Module> modules) {
 		this.modules = modules;
 	}
-
 	@Override
 	public String toString() {
-		return "Course [id=" + id + ", name=" + name + ", startDate=" + startDate + ", endDate=" + endDate + "]";
+		return "Course [id=" + id + ", name=" + name + ", startDate=" + startDate + ", endDate=" + endDate
+				+ ", modules=" + modules + "]";
 	}
+
+
 	
 	
 	

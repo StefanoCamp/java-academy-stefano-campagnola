@@ -92,6 +92,7 @@ private static final Logger logger = Logger.getLogger(Dao.class.getName());
 		try {
 			course = session.get(Course.class, courseId);
 			if (course != null) {
+				Hibernate.initialize(course.getModules());
 				modules = course.getModules();
 			}
 		} catch (HibernateException e) {
@@ -109,10 +110,16 @@ private static final Logger logger = Logger.getLogger(Dao.class.getName());
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		List<Course> course = null;
 		try {
-			TypedQuery<Course> query  = session.createQuery("SELECT c FROM Course c WHERE c.startDate>=:startDate and c.endDate<=:endDate", Course.class);
+			TypedQuery<Course> query  = session.createQuery("SELECT c FROM Course c WHERE c.startDate BETWEEN :startDate and :endDate", Course.class);
 			query.setParameter("startDate", from);
 			query.setParameter("endDate", to);
 			course = query.getResultList();
+			if (course != null) {
+				for(Course c : course) {
+					Hibernate.initialize(c.getModules());
+				}
+				
+			}
 		} catch (HibernateException e) {
 			e.printStackTrace();
 		} finally {
@@ -168,6 +175,23 @@ private static final Logger logger = Logger.getLogger(Dao.class.getName());
 		try {
 			tx = session.beginTransaction();
 			session.createQuery("DELETE FROM Course").executeUpdate();
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx!=null) tx.rollback();
+			e.printStackTrace(); 
+		} finally {
+			session.close(); 
+		}
+	}
+	
+	public void deleteAllModules(){
+		logger.info("deleteAllModules");
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = null;
+		
+		try {
+			tx = session.beginTransaction();
+			session.createQuery("DELETE FROM Module").executeUpdate();
 			tx.commit();
 		} catch (HibernateException e) {
 			if (tx!=null) tx.rollback();
