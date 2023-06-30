@@ -19,6 +19,9 @@ public class Course extends Base{
 	@OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
 	private List<Registration> registrations;
 	
+	@OneToMany(mappedBy = "courseModule", fetch = FetchType.LAZY)
+	private List<Module> modules;
+	
 	public Course() {
 		
 	}
@@ -41,6 +44,14 @@ public class Course extends Base{
 
 	public void setRegistrations(List<Registration> registrations) {
 		this.registrations = registrations;
+	}
+
+	public List<Module> getModules() {
+		return modules;
+	}
+
+	public void setModules(List<Module> modules) {
+		this.modules = modules;
 	}
 
 	@Override

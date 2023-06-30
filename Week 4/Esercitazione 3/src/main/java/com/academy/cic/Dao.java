@@ -13,6 +13,7 @@ import org.hibernate.HibernateException;
 import com.academy.cic.model.Course;
 import com.academy.cic.model.Registration;
 import com.academy.cic.model.Student;
+import com.academy.cic.model.Module;
 import com.academy.cic.util.JpaUtil;
 
 
@@ -53,6 +54,41 @@ public class Dao {
 		}
 	}
 	
+	public void insertModule(Module module){
+		logger.info("insertModule");
+		EntityManager entityManager = JpaUtil.getEntityManagerFactory().createEntityManager();
+	   
+		try {
+			entityManager.getTransaction().begin();
+			entityManager.persist(module); 
+			entityManager.getTransaction().commit();
+		} catch (Exception e) {
+			entityManager.getTransaction().rollback();
+			e.printStackTrace(); 
+		} finally {
+			entityManager.close(); 
+		}
+	}
+	
+	
+	public void insertModuleToCourse(Module module, int courseId){
+		logger.info("insertModuleToCourse");
+		EntityManager entityManager = JpaUtil.getEntityManagerFactory().createEntityManager();
+	    Course course = null;
+		try {
+			course = entityManager.find(Course.class, courseId);
+			course.getModules().add(module);
+			entityManager.getTransaction().begin();
+			entityManager.merge(course); 
+			entityManager.getTransaction().commit();
+		} catch (Exception e) {
+			entityManager.getTransaction().rollback();
+			e.printStackTrace(); 
+		} finally {
+			entityManager.close(); 
+		}
+	}
+	
 	public void registryStudentCourse(Registration registration){
 		logger.info("registryStudentCourse");
 		EntityManager entityManager = JpaUtil.getEntityManagerFactory().createEntityManager();
@@ -67,6 +103,42 @@ public class Dao {
 		} finally {
 			entityManager.close(); 
 		}
+	}
+	
+	public Course findCourseById(int courseId) {
+		logger.info("findCourseById");
+		EntityManager entityManager = JpaUtil.getEntityManagerFactory().createEntityManager();
+		Course course = null;
+		try {
+			course = entityManager.find(Course.class, courseId);
+			if(course != null) {
+				Hibernate.initialize(course.getModules());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			entityManager.close(); 
+		}
+		
+		return course;
+	}
+	
+	public List<Module> findModulesByCourseId(int courseId){
+		logger.info("findModulesByCourseId");
+		EntityManager entityManager = JpaUtil.getEntityManagerFactory().createEntityManager();
+		List<Module> modules = null;
+		try {
+			Course course = entityManager.find(Course.class, courseId);
+			if(course != null) {
+				Hibernate.initialize(course.getModules());
+				modules=course.getModules();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			entityManager.close(); 
+		}
+		return modules;
 	}
 	
 	public List<Student> findByNameSurname(String name, String surname){
